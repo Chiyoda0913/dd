@@ -21,7 +21,7 @@ echo "填写该vtuber的频道地址:"
 read url
 
 echo "填写代理地址，无需代理则留空:"
-read local
+read proxyurl
 
 echo "是否需要下载缩略图，下载填写true，否则填写false:"
 read option
@@ -31,10 +31,10 @@ cd $name
 
 if [ $option = true ]
 then
-    youtube-dl -o "[%(upload_date)s] %(title)s" --write-all-thumbnails --proxy "$local" "$url"
+    youtube-dl -o "[%(upload_date)s] %(title)s" --write-all-thumbnails --proxy "$proxyurl" "$url"
 elif [ $option = false ]
 then
-    youtube-dl -o "[%(upload_date)s] %(title)s" --proxy "$local" "$url"
+    youtube-dl -o "[%(upload_date)s] %(title)s" --proxy "$proxyurl" "$url"
 fi
 
 echo "下载完成"
