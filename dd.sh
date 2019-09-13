@@ -1,4 +1,5 @@
 #!/bin/bash
+export LANG="en_US-UTF.8"
 
 echo "是否需要安装youtube-dl，下载填写true，否则填写false"
 read download
